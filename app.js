@@ -39,8 +39,8 @@ app.use(helmet());
 app.use(express.json());
 
 app.use(mongoSanitize());
-app.use(xss());
-app.use(hpp());
+// app.use(xss());
+// app.use(hpp());
 app.use(morgan('dev')); // Third-party Middleware
 
 // Test Middlwares
