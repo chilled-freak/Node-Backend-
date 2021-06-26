@@ -10,6 +10,7 @@ const reviewRouter = require('./routes/reviewRouter')
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
+const cors = require('cors');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const compression = require('compression');
@@ -21,6 +22,9 @@ app.set('views', path.join(__dirname, 'views'))
 // Global Middlewares
 
 // Serving Static Data
+app.use(cors{
+     origin: "*"
+})
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Request Limit Middlware
